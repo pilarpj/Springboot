@@ -25,10 +25,12 @@ public class Test
   @RequestMapping(value = "/test",
                   method = RequestMethod.POST,
                   produces = MediaType.APPLICATION_JSON_VALUE)
+  //Siempre recibe un modelo (objeto del modelo testModel)
   public List<TestModel> test(@RequestBody TestModel obj) throws Exception
   {
     List<TestModel> x = iService.testService(obj);
-
+      System.out.println(obj.getText());
+      
     return x;
   }
 
