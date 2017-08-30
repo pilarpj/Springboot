@@ -1,0 +1,19 @@
+<div class="centrar">
+    <!--    <table class="tabla">
+            <tr ng-repeat="x in datos">
+                <th><button class="btn" ng-click="bbdd()">BBDD</button></th>
+                <th>{{mensaje}}</th>
+        </tr>
+        </table>
+    -->
+
+    <table class="tabla">
+        <tr>
+            <th><button class="btn" ng-click="bbdd()">BBDD</button> </th>
+        </tr>
+        <tr ng-repeat="x in datos">
+            <td>{{x.table}}</td>
+        </tr>
+    </table>
+
+</div>

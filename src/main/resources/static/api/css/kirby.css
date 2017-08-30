@@ -1,0 +1,422 @@
+      *{
+                padding: 0;
+                margin: 0;
+
+            }
+            #muneco{
+                position: relative;
+                margin-left: 50px;
+            }
+            /*CSS*/
+            #cuerpo{
+                position: relative;
+                height:200px;
+                width: 200px;
+                background: #F6CED8;
+                border-radius: 70%;
+                border-style: solid;
+                border-color: black;
+                border-width: 2.5px;
+                overflow: hidden;
+                
+
+            }
+
+
+             #cuerpo:hover, #cuerpoSombra:hover , #cuerpoColor:hover{
+                    transition: all 1750ms ease-in-out;
+                    animation: fxCuerpo 1750ms infinite ease-in-out;
+
+
+                  }
+                  @keyframes fxCuerpo{
+                    0%, 100%
+                    {
+                      left: 16px;
+                    }
+                    50%
+                    {
+                      top: 0%;
+                    } 
+                  }
+
+
+
+            #cuerpoSombra{
+                background: #FA5882;
+                height:200px;
+                width: 200px;
+                border-radius: 70%;
+                 box-shadow:  inset 0 0 20px rgba(155, 0, 155, 0.80);
+                
+
+            }
+            #cuerpoColor{
+                position: absolute;
+                background: #F6CED8;
+                height:200px;
+                width: 200px;
+                border-radius: 70%;
+                bottom: 20px;
+                 /*box-shadow:  inset 0 0 15px rgba(155, 0, 155, 0.25);*/
+                 box-shadow:  inset 0 0 40px rgba(155, 0, 155, 0.40);
+                
+                
+            }
+            #ojoIzqPos{
+                position: absolute;
+                top: 50px;
+                left: 70px;
+            }
+
+            #ojoIzq{
+                background: #58ACFA; 
+                height: 50px;
+                width: 20px;
+                border-radius: 100%;
+                overflow: hidden;
+                border-style: solid;
+                border-color: black;
+                border-width: 2px;
+                box-shadow:  inset 0 0 8px rgba(0, 0, 155, 0.80);
+               
+            }
+
+            #ojoIzqNegro{
+                background: black; 
+                top: 50px;
+                left: 47px;
+                height: 37px;
+                width: 20px;
+                border-radius: 100%;
+                border-style: solid;
+                border-color: black;
+                border-width: 1px;
+                overflow: hidden;
+              
+            }
+
+            #ojoIzqPupila{
+                position: absolute;
+                background: white; 
+                left: 3px;
+                height: 23px;
+                width: 15px;
+                border-radius: 100%;
+                border-style: solid;
+                border-color: black;
+                border-width: 0.5px;
+                
+            }
+
+/*            #ojoIzqPos:hover, #ojoIzqNegro:hover, 
+            #ojoIzq:hover{
+                height: 500px;
+                width: 200px;
+                background: red;
+            }*/
+
+            #ojoDerPos{
+                 position: absolute;
+                 top: 50px;
+                right: 70px;
+            }
+            #ojoDer{ 
+                background: #58ACFA; 
+                height: 50px;
+                width: 20px;
+                border-radius: 100%;
+                overflow: hidden;
+                border-style: solid;
+                border-color: black;
+                border-width: 2px;
+                 box-shadow:  inset 0 0 8px rgba(0, 0, 155, 0.80);
+            }
+            
+
+             #ojoDerNegro{
+               background: black; 
+                top: 50px;
+                right: 50px;
+                height: 37px;
+                width: 20px;
+                border-radius: 100%;
+                border-style: solid;
+                border-color: black;
+                border-width: 1px;
+                overflow: hidden;
+            }
+
+            #ojoDerPupila{
+                position: absolute;
+                background: white; 
+                left: 3px;
+                height: 23px;
+                width: 15px;
+                border-radius: 100%;
+                border-style: solid;
+                border-color: black;
+                border-width: 0.5px;
+            }
+            #mejillaDerPos{
+                  position: absolute;
+                  top: 100px;
+                right: 35px;
+            }
+
+            #mejillaDer{
+              
+                background: #F7819F; 
+                height: 20px;
+                width: 40px;
+                border-radius: 70%;
+
+            }
+            
+            #mejillaIzqPos{
+                position: absolute;
+                top: 100px;
+                left: 35px;
+            }
+             #mejillaIzq{
+                background: #F7819F; 
+                height: 20px;
+                width: 40px;
+                border-radius: 70%;
+            }
+
+            #mejillaDer:hover, #mejillaIzq:hover{
+                 transition-duration: 3s;
+                transform: scale(2);
+            }
+            
+            #bocaPos{
+                position: relative;
+               /* left: 85px;*/
+               left: 43%;
+                top: 60%;
+               
+            }
+            
+            #boca{
+                position: absolute;
+                background: #8A0808;
+                height: 20px;
+                width: 30px;
+                border-radius: 100%;
+                 overflow: hidden;
+                 border-style: solid;
+                border-color: black;
+                border-width: 1px;
+            }
+
+            #bocaInt{
+                position: absolute;
+                background: #FA5858;
+                top: 10px;
+                height: 10px;
+                width: 30px;
+                border-radius: 100%;
+            }
+
+
+             #boca:hover , #bocaInt:hover
+              {
+               /* top: 15px;
+                width: 30%;
+                height: 15%;
+                left: -15px;*/
+                 top: 55%;
+                left: -8%;
+                 width: 30%;
+                height: 15%;
+                transition-duration: 1s;
+                box-shadow:  0 0 2px 1px rgba(55, 0, 55, 0.75), inset 0 0 15px rgba(155, 0, 155, 0.75);
+              }
+
+            #boca:before{
+                left: 0px;
+              }
+            #boca:after
+              {
+                right: 0px;
+              }
+
+            #piernaIzqPos{
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 165px;
+                left: 30px;
+            }
+
+            #piernaIzqSombra{
+                position: relative;
+                background: #8A084B;
+                width: 80px;
+                height: 50px;
+                right: 15px;
+                  border-top-left-radius: 110px;
+                -moz-border-radius-topleft: 110px;
+                -webkit-border-top-left-radius: 110px;
+                border-top-right-radius: 110px;
+                -moz-border-radius-topright: 110px;
+                -webkit-border-top-right-radius: 110px;
+                border-style: solid;
+                border-color: black;
+                border-width: 2px
+
+            }
+
+
+             #piernaIzq{
+                position: relative;
+                background: #FE2E64;
+                width: 75px;
+                height: 50px;
+                left: 1px;
+                border-top-left-radius: 110px;
+                -moz-border-radius-topleft: 110px;
+                -webkit-border-top-left-radius: 110px;
+                border-top-right-radius: 110px;
+                -moz-border-radius-topright: 110px;
+                -webkit-border-top-right-radius: 110px;
+                 box-shadow:  inset 0 0 15px rgba(155, 0, 155, 0.80);
+
+            }
+            
+
+            #piernaDerPos{
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 165px;
+                left: 173px;
+            }
+
+            #piernaDerSombra{
+                position: relative;
+                background: #8A084B;
+                right: 60px;
+                width: 80px;
+                height: 50px;
+                border-top-left-radius: 110px;
+                -moz-border-radius-topleft: 110px;
+                -webkit-border-top-left-radius: 110px;
+                border-top-right-radius: 110px;
+                -moz-border-radius-topright: 110px;
+                -webkit-border-top-right-radius: 110px;
+                border-style: solid;
+                border-color: black;
+                border-width: 2px
+
+            }
+
+
+             #piernaDer{
+                position: relative;
+                background: #FE2E64;
+                width: 75px;
+                height: 50px;
+                left: 4px;
+                border-top-left-radius: 110px;
+                -moz-border-radius-topleft: 110px;
+                -webkit-border-top-left-radius: 110px;
+                border-top-right-radius: 110px;
+                -moz-border-radius-topright: 110px;
+                -webkit-border-top-right-radius: 110px;
+                 box-shadow:  inset 0 0 15px rgba(155, 0, 155, 0.80);
+
+            }
+
+            
+
+            #brazoIzqPos{
+                position: absolute;
+                background: black;
+                width: 10px;
+                height: 10px;
+                top: 100px;
+                left: 0px;
+            }
+
+            #brazoIzqSombra{
+                position: absolute;
+                 background: #FA5882;
+                 width: 50px;
+                height: 50px;
+                right: -18px;
+                 border-top-left-radius: 100px;
+                -moz-border-radius-topleft: 100px;
+                -webkit-border-top-left-radius: 100px;
+                border-bottom-left-radius: 100px;
+                 -moz-border-radius-bottomleft: 100px;
+                 -webkit-border-bottom-left-radius: 100px;
+                 transform: rotate(-15deg);
+                    border-style: solid;
+                border-color: black;
+                border-width: 2px
+            }
+
+
+            #brazoIzq{
+                position: absolute;
+                 background: #F6CED8;
+                 width: 50px;
+                height: 50px;
+                right: -3px;
+                 border-top-left-radius: 100px;
+                -moz-border-radius-topleft: 100px;
+                -webkit-border-top-left-radius: 100px;
+                border-bottom-left-radius: 100px;
+                 -moz-border-radius-bottomleft: 100px;
+                 -webkit-border-bottom-left-radius: 100px;
+                 transform: rotate(-10deg);
+                 box-shadow:  inset 0 0 30px rgba(155, 0, 155, 0.30);
+              
+            }
+
+             #brazoDerPos{
+                position: absolute;
+               
+                width: 10px;
+                height: 10px;
+                top: 100px;
+                left: 200px;
+            }
+
+            #brazoDerSombra{
+                position: absolute;
+                 background: #FA5882;
+                 width: 50px;
+                height: 50px;
+                right: -20px;
+                 border-top-left-radius: 100px;
+                -moz-border-radius-topleft: 100px;
+                -webkit-border-top-left-radius: 100px;
+                border-bottom-left-radius: 100px;
+                 -moz-border-radius-bottomleft: 100px;
+                 -webkit-border-bottom-left-radius: 100px;
+                 transform: rotate(200deg);
+                    border-style: solid;
+                border-color: black;
+                border-width: 2px
+            }
+
+
+            #brazoDer{
+                position: absolute;
+                 background: #F6CED8;
+                 width: 50px;
+                height: 50px;
+                right: -3px;
+                 border-top-left-radius: 100px;
+                -moz-border-radius-topleft: 100px;
+                -webkit-border-top-left-radius: 100px;
+                border-bottom-left-radius: 100px;
+                 -moz-border-radius-bottomleft: 100px;
+                 -webkit-border-bottom-left-radius: 100px;
+                 transform: rotate(-15deg);
+               box-shadow:  inset 0 0 30px rgba(155, 0, 155, 0.30);
+            }
+            

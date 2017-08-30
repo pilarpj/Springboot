@@ -3,6 +3,8 @@ app.controller('ng-app-controller-template1', ['$scope', '$http', function ($sco
     {
         console.log('Controler pagina 1');
         $scope.mensaje = 'Texto cargado desde el controlador Pagina1Controller ';
+       
+       
         //Peticion ajax, nombre del controlador test, + el objeto
         $http.post('/test',
                 {
