@@ -12,7 +12,8 @@
             <th><button class="btn" ng-click="bbdd()">BBDD</button> </th>
         </tr>
         <tr ng-repeat="x in datos">
-            <td>{{x.table}}</td>
+            <td>{{x.table | uppercase}}</td>
+            
         </tr>
     </table>
 

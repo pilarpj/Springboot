@@ -45,6 +45,12 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
                  .when('/ayuda', {
                      templateUrl: GBL_COFG.urlTemplate('ayuda.html')
                  })
+                 
+                .when('/buscar',
+                {
+                    templateUrl: GBL_COFG.urlTemplate('buscar.html'),
+                    controller: 'ng-app-controller-buscar'
+                })
 
                 ;
 

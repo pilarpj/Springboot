@@ -223,3 +223,18 @@ li{
 {
   padding: 5px;
 }
+
+
+.buscador{
+    width: 200px;
+    height: 50px;
+    background-color: #b3cccc;
+    font-size: 18px;
+    margin: 10px;
+    box-shadow: 2px 2px 2px #1f2e2e;
+}
+
+input{
+    margin: 10px;
+    padding: 10px;
+}
