@@ -15,10 +15,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider,
                 {
                     redirectTo: '/'
                 })
-                .when('/index',
+                .when('/',
                 {
-                    templateUrl: GBL_COFG.urlTemplate('index.html'),
-                     controller: 'ng-app-controller-template-index'
+                    templateUrl: GBL_COFG.urlTemplate('home.html'),
+                   
                 })
                 .when('/pagina1',
                 {
