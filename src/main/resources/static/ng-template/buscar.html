@@ -1,4 +1,37 @@
-<div class="centrar"><input type="text" ng-keyup="buscar($event)" placeholder="Buscar..." class="buscador" name="busca"> 
+<!--
+<div class="buscador">
+    <label class="contador">{{numero}}</label>
+    <input type="text" ng-keyup="buscar($event)" placeholder="Buscar..." name="busca"> 
+    
+</div>-->
 
-{{tabla}}
-</div>
+
+<fieldset class="buscador">
+   
+    <input type="text" ng-keyup="buscar($event)" placeholder="Buscar..." name="busca"> 
+     <div class="contador" id="cuenta">
+         {{numero}}
+     
+     </div>
+    
+</fieldset>
+
+
+<table class="tabla">
+
+    <tr>
+        <th>Nombre del producto</th>  
+        <th>Descripcion</th>  
+        <th>Imagen</th> 
+    </tr>     
+    <tr ng-repeat="x in tabla">
+        <td>{{x.nombre}}</td>
+        <td>{{x.descripcion}}</td>
+        <td>{{x.url}}</td>
+
+    </tr>
+</table>
+
+
+    
+    

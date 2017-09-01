@@ -11,5 +11,10 @@ public interface ItemService {
     
     public List<ItemModel> itemService(ItemModel obj) throws Exception;
             
+        
+    public List<ItemModel> AllItemService(ItemModel obj) throws Exception;
+            
+    
+    
     
 }

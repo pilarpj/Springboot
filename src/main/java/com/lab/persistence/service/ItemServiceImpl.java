@@ -16,6 +16,7 @@ public class ItemServiceImpl implements ItemService{
   @Autowired
   ItemMapper itemMapper;
 
+
 /**
  * Servicio que recibe una lista de objetos de ItemModel,
  * y devuelve una copia usando el mapper.
@@ -29,6 +30,18 @@ public class ItemServiceImpl implements ItemService{
     List<ItemModel> x = itemMapper.itemMapper(obj);
     return x;
   }
+/**
+ * Servicio que devuelve un array de items por defecto
+ * @param obj
+ * @return
+ * @throws Exception 
+ */
+    @Override
+    public List<ItemModel> AllItemService(ItemModel obj) throws Exception {
+        
+           List<ItemModel> x = itemMapper.allItemsMapper(obj);
+    return x;
+    }
 
    
 }
