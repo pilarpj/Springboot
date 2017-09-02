@@ -1,9 +1,4 @@
-<!--
-<div class="buscador">
-    <label class="contador">{{numero}}</label>
-    <input type="text" ng-keyup="buscar($event)" placeholder="Buscar..." name="busca"> 
-    
-</div>-->
+
 
 <div class="index">
     <div class="panel">Buscador</div>
@@ -25,12 +20,31 @@
 
 </fieldset>-->
 
+<div id="tablaBbdd">
+    <div id="tablaBbddCabecera" >
+        <h1>Items</h1>
+    </div>
+    
+    <table id="tablaBbddContenido">
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Url</th>
+        </tr>
+        <tr ng-repeat="x in tabla">
+            <td>{{x.nombre}}</td>
+            <td>{{x.descripcion}}</td>
+            <td style="background-image: url('{{x.url}}')"></td>
+        </tr>
+    </table>
+
+</div>
 
 
 
 
 
-<table class="tabla">
+<!--<table class="tabla">
 
     <tr>
         <th>Nombre del producto</th>  
@@ -43,7 +57,7 @@
         <td>{{x.url}}</td>
 
     </tr>
-</table>
+</table>-->
 
 
 
