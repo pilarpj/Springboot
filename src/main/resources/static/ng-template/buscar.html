@@ -6,6 +6,11 @@
         <div class="container-1">
             <input type="search" id="search" class="box container-1" ng-keyup="buscar($event)" placeholder="Buscar..." > 
         </div>
+        <div  id="cuenta">
+            Datos recibidos : {{busquedas}} <br>
+            Contador de busquedas: {{contador}}
+        </div>
+
     </div>
 </div>
 
@@ -24,7 +29,7 @@
     <div id="tablaBbddCabecera" >
         <h1>Items</h1>
     </div>
-    
+
     <table id="tablaBbddContenido">
         <tr>
             <th>Nombre</th>

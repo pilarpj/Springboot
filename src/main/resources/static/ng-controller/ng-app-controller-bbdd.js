@@ -1,5 +1,5 @@
-app.controller('ng-app-controller-bbdd', ['$scope', '$http', function ($scope,
-            $http)
+app.controller('ng-app-controller-bbdd', ['$scope', '$http', 'serviceBD', function ($scope,
+            $http , serviceBD)
     {
         console.log('Controler base de datos');
         $scope.mensaje = 'Texto cargado desde el controller bbdd ';
@@ -22,13 +22,16 @@ app.controller('ng-app-controller-bbdd', ['$scope', '$http', function ($scope,
         $scope.bbdd = function () {
                     //Esconde botón
                    $scope.mostrar = true;
+                   
+                   //Recorre la base de datos, devuelve el nombre de las tablas.
                     for (var i = 0, max = datos.length; i < max; i++) {
                         $scope.mensaje = (datos[i].table);
                         $scope.datos = datos;
                     }
                     $scope.tabla = response.data;
-                   // $scope.mensaje = (datos);
-                        
+                   
+                    serviceBD.setTestModel(serviceBD.getTestModel()+1);
+                    
                     };
 
                 });

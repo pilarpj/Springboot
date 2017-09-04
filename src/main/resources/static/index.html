@@ -9,7 +9,8 @@
         <script type="text/javascript" src='/api/js/lib/ng-angular-route.min.js'></script>
         <script type="text/javascript" src='/api/js/ng-const/ng-const.min.js'></script>
         <script type="text/javascript" src="/api/js/ng-module/ng-module-app.js"></script>
-
+         <script type="text/javascript" src="/api/js/ng-directive/ng-directive-app.js"></script>
+         <script type="text/javascript" src="/api/js/ng-factory/ng-factory-app.js"></script>
     </head>
     <body apploading ng-controller="ng-app-controller-template-index"> 
 
@@ -17,18 +18,19 @@
             <ul id="menuUl">
                 <li class="menuText">Menu</li>
                 <li><a href="#!/home">Home</a></li>
-                 <li><a href="#!/bbdd">BBDD</a></li>
-                 <li><a href="#!/buscar">Buscar</a></li>
+                <li><a href="#!/bbdd">BBDD</a></li>
+                <li><a href="#!/buscar">Buscar</a></li>
             </ul>
         </div>
 
-<a href="#!/ayuda" class="ayudaIcon" >?</a>
+        <a href="#!/ayuda" class="ayudaIcon" id="ayudaIconPos" >?</a>
 
         <div ng-view></div>
 
         <script type="text/javascript" src="/ng-controller/ng-app-controller-template-index.js"></script>
-        <script type="text/javascript" src="/ng-controller/ng-app-controller-bbdd.js"></script>      
-          <script type="text/javascript" src="/ng-controller/ng-app-controller-buscar.js"></script>
+        <script type="text/javascript" src="/ng-controller/ng-app-controller-bbdd.js"></script>  
+        <script type="text/javascript" src="/ng-controller/ng-app-controller-ayuda.js"></script>
+        <script type="text/javascript" src="/ng-controller/ng-app-controller-buscar.js"></script>
         <script type="text/javascript" src="/ng-controller/ng-app-controller-template1.js"></script>
         <script type="text/javascript" src="/ng-controller/ng-app-controller-template2.js"></script>
         <script type="text/javascript" src="/ng-controller/ng-app-controller-template3.js"></script>
