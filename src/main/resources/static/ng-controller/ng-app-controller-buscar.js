@@ -32,11 +32,11 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
          */
         $scope.buscar = function (e) {
 
+       
             var datoBuscador = e.target.value;
             console.log("Datobuscador dentro del controller: " + datoBuscador);
-          
         
-            
+     
             $timeout.cancel(timer);
 
             timer = $timeout(function () {
@@ -46,9 +46,14 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
                       añade 1 cada vez que busca.
                      */
                     serviceBD.setAllItems(serviceBD.getAllItems() +1);
-                   
-                    console.log('Contenido contallitems:' + serviceBD.getAllItems());
-                $http.post('/item',
+                    
+                    $scope.tipo= serviceBD.comprobarTipo(e.target.value);
+                    
+                    
+                /**
+                 * Cuanto es string va a item, cuando es numérico a itemNum
+                 */    
+                $http.post(serviceBD.comprobarTipo(e.target.value),
                         {
                             datoBuscador: datoBuscador
                         })
@@ -76,13 +81,10 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
                             } else {
                                 id.style.color = 'black';
                             }
-
                         });
-
+                       
             }, 750);
-
         };
-
     }]);
 
 

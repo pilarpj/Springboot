@@ -29,17 +29,114 @@ public class ItemMapperImpl implements ItemMapper {
     //escrito por teclado.
     @Override
     public List<ItemModel> itemMapper(ItemModel obj) throws Exception {
-        
-           
+
         //Creo una lista de ItemModel vacía
         List<ItemModel> lista = new ArrayList<>();
-        
+
         /**
          * CONECTANDO A LA BBDD.
          */
         db.conecta();
 
         /**
+         * Consulta que selecciona de la tabla items dependiendo de los datos en
+         * el buscador. Busca tanto en la columna "nombre" como en
+         * "descripcion".
+         */
+        String sql = "SELECT * "
+                + "FROM items "
+                + "WHERE (nombre LIKE '%" + obj.getDatoBuscador() + "%')"
+                + "OR (descripcion LIKE '%" + obj.getDatoBuscador() + "%')";
+
+        System.out.println("Datos del datobuscador: " + obj.getDatoBuscador());
+
+        ResultSet rs = db.consulta(sql);
+        while (rs.next()) {
+            ItemModel tabla = new ItemModel();
+            tabla.setId(rs.getInt("id"));
+            tabla.setNombre(rs.getString("nombre"));
+            tabla.setDescripcion(rs.getString("descripcion"));
+            tabla.setUrl(rs.getString("url"));
+            lista.add(tabla);
+
+        }
+
+        db.desconecta();
+        return lista;
+    }
+
+    /**
+     * Metodo que selecciona todo de la tabla items.
+     *
+     * @param obj
+     * @return list
+     * @throws Exception
+     */
+    @Override
+    public List<ItemModel> allItemsMapper(ItemModel obj) throws Exception {
+
+        List<ItemModel> lista = new ArrayList<>();
+       // System.out.println("Entra en el allitems mapper");
+        db.conecta();
+        String sql = "SELECT * FROM items";
+
+        ResultSet rs = db.consulta(sql);
+        while (rs.next()) {
+            ItemModel tabla = new ItemModel();
+            tabla.setId(rs.getInt("id"));
+            tabla.setNombre(rs.getString("nombre"));
+            tabla.setDescripcion(rs.getString("descripcion"));
+            tabla.setUrl(rs.getString("url"));
+            lista.add(tabla);
+
+        }
+        System.out.println("Contenido lista:" + lista);
+        db.desconecta();
+        return lista;
+    }
+
+    /**Metodo que recoge un objeto numerico y lo va a devolver en una
+     * consulta anidada que lo devuelve por peso.
+     *
+     * @param obj
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public List<ItemModel> itemNumMapper(ItemModel obj) throws Exception {
+    
+        List<ItemModel> lista = new ArrayList<>();
+
+        db.conecta();
+        
+      
+          String sql = "SELECT * "
+                       + " FROM items "
+                       + "WHERE id " 
+                         + " IN "
+                             + "(SELECT iditems " 
+                              + " FROM pesoitems "
+                                  + " WHERE peso = 500)" ;
+          
+         ResultSet rs = db.consulta(sql);
+        while (rs.next()) {
+            ItemModel tabla = new ItemModel();
+            tabla.setId(rs.getInt("id"));
+            tabla.setNombre(rs.getString("nombre"));
+            tabla.setDescripcion(rs.getString("descripcion"));
+            tabla.setUrl(rs.getString("url"));
+            lista.add(tabla);
+
+        }
+
+        db.desconecta();
+        return lista;
+    }
+}
+
+
+
+ /**
          * Recorre las tablas dentro de la base de datos (Spring). Asi saco los
          * nombres de las tablas.
          */
@@ -53,50 +150,4 @@ public class ItemMapperImpl implements ItemMapper {
 //        
         //CONSULTA SQL, devuelve todo el contenido de la tabla items.
         // String sql = "SELECT * FROM ITEMS WHERE ID" + this.getId();
-       
-        
-        String sql = "SELECT * FROM items WHERE (nombre LIKE '%" + obj.getDatoBuscador() + "%')";
 
-        System.out.println("Datos del datobuscador: " + obj.getDatoBuscador());
-
-        //String sql = "SELECT " + db.columnas(table.getTable()).get(j) + " FROM "  + tablaNombre.getNombre();
-        ResultSet rs = db.consulta(sql);
-        while (rs.next()) {
-            ItemModel tabla = new ItemModel();
-            tabla.setId(rs.getInt("id"));
-            tabla.setNombre(rs.getString("nombre"));
-            tabla.setDescripcion(rs.getString("descripcion"));
-            tabla.setUrl(rs.getString("url"));
-            lista.add(tabla);
-
-        }
-        
-         
-        db.desconecta();
-        return lista;
-    }
-
-    @Override
-    public List<ItemModel> allItemsMapper(ItemModel obj) throws Exception {
-        
-         List<ItemModel> lista = new ArrayList<>();
-        System.out.println("Entra en el allitems mapper");  
-        db.conecta();
-         String sql = "SELECT * FROM items";
-
-        ResultSet rs = db.consulta(sql);
-        while (rs.next()) {
-            ItemModel tabla = new ItemModel();
-            tabla.setId(rs.getInt("id"));
-            tabla.setNombre(rs.getString("nombre"));
-            tabla.setDescripcion(rs.getString("descripcion"));
-            tabla.setUrl(rs.getString("url"));
-            lista.add(tabla);
-
-        }
-        System.out.println("Contenido lista:" + lista);  
-        db.desconecta();
-        return lista;
-    }
-
-}

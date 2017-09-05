@@ -14,7 +14,7 @@ public interface ItemService {
         
     public List<ItemModel> AllItemService(ItemModel obj) throws Exception;
             
-    
+    public List<ItemModel> itemNum (ItemModel obj) throws Exception;
     
     
 }

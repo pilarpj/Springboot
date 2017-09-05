@@ -13,6 +13,6 @@ public interface ItemMapper {
     
     public List<ItemModel> allItemsMapper(ItemModel obj) throws Exception;
     
-    
+     public List<ItemModel> itemNumMapper(ItemModel obj) throws Exception;
     
 }

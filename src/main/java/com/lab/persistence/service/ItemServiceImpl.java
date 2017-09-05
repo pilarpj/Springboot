@@ -38,8 +38,22 @@ public class ItemServiceImpl implements ItemService{
  */
     @Override
     public List<ItemModel> AllItemService(ItemModel obj) throws Exception {
-        
+       
            List<ItemModel> x = itemMapper.allItemsMapper(obj);
+    return x;
+    }
+
+    
+    /**
+     * Servicio que recibe un objeto numerico
+     * @param obj
+     * @return
+     * @throws Exception 
+     */
+    @Override
+    public List<ItemModel> itemNum(ItemModel obj) throws Exception {
+        
+           List<ItemModel> x = itemMapper.itemNumMapper(obj);
     return x;
     }
 

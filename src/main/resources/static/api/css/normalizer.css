@@ -286,10 +286,10 @@ BOTON
     width: 50%;
     left: 30%;
     margin: 1% 0 auto;
-    float: left;
+   
 
 }
-#bg{
+#bg-h{
     width: 100px;
     height: 100px;
     background-color:#4CAF50;
@@ -297,7 +297,7 @@ BOTON
 
 }
 
-#bg:hover{
+#bg-h:hover{
     box-shadow: 0px 0px 10px 4px rgba(76, 175, 80, 0.66);
     -moz-box-shadow: 0px 0px 10px 4px rgba(76, 175, 80, 0.66);
     -webkit-box-shadow: 0px 0px 10px 4px rgba(76, 175, 80, 0.66);
@@ -490,19 +490,20 @@ td, th{
 /*--------------------------------------------------------*/
 /*TEXTO BIENVENIDO
 */
-.panel{
+#panel{
     font-size: 50px;
     font-family: 'Lobster';
 }
 
-.panel:after{
-    content: '';
-    position: absolute;
-    top: 10%;
+.panelBText{
+    font-size: 50px;
+    font-family: 'Lobster';
+}
+
+#panel:after{
+    content: '';  
     width: 500px;
-    height: 1px;
-    float: left;
-    left: 30%;
+    height: 1px; 
     z-index: 2;
     border: 0;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); 
