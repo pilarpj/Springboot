@@ -28,8 +28,34 @@ public class ItemServiceImpl implements ItemService{
   public List<ItemModel> itemService(ItemModel obj) throws Exception
   {
     List<ItemModel> x = itemMapper.itemMapper(obj);
+    
+    
+    for (int i = 0; i < x.size(); i++) {
+               x.get(i).setNombre(x.get(i).getNombre().replaceAll("" + obj.getDatoBuscador() + 
+                        "","<span class=\"sub\">" + obj.getDatoBuscador() + "</span>"));
+               x.get(i).setDescripcion(x.get(i).getDescripcion().replaceAll("" + obj.getDatoBuscador() + 
+                        "","<span class=\"sub\">" + obj.getDatoBuscador() + "</span>"));
+               
+            }
+      System.out.println("Contenido de X.SIZE: " + x.size());
+             
     return x;
+    
   }
+   
+//    private void itemReplace (ItemModel obj) throws Exception{
+//  
+//       List<ItemModel> x = itemMapper.itemMapper(obj);
+//       obj.getDatoBuscador();
+//            for (int i = 0; i < x.size(); i++) {
+//                x.get(i).getNombre().replaceAll("" + obj.getDatoBuscador() + 
+//                        "","<span class='sub'>" + obj.getDatoBuscador() + "<span>");
+//            }
+//        
+//    }
+  
+  
+  
 /**
  * Servicio que devuelve un array de items por defecto
  * @param obj

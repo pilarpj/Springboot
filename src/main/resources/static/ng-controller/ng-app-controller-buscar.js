@@ -32,28 +32,36 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
          */
         $scope.buscar = function (e) {
 
-       
+            var servicio;
             var datoBuscador = e.target.value;
+            servicio = serviceBD.comprobarTipo(datoBuscador);
             console.log("Datobuscador dentro del controller: " + datoBuscador);
-        
-     
+            
+            /**
+             * Si es cadena vacía, muestra todos los items.
+             */
+            if (datoBuscador === '') {
+                servicio = '/allItems';
+            }
+
             $timeout.cancel(timer);
 
             timer = $timeout(function () {
-                
-                    /*
-                     *Servicio factory. Set en variable 0, 
-                      añade 1 cada vez que busca.
-                     */
-                    serviceBD.setAllItems(serviceBD.getAllItems() +1);
-                    
-                    $scope.tipo= serviceBD.comprobarTipo(e.target.value);
-                    
-                    
+
+                /*
+                 *Servicio factory. Set en variable 0, 
+                 añade 1 cada vez que busca.
+                 */
+                serviceBD.setAllItems(serviceBD.getAllItems() + 1);
+
+               // $scope.tipo = serviceBD.comprobarTipo(e.target.value);
+
+
                 /**
-                 * Cuanto es string va a item, cuando es numérico a itemNum
-                 */    
-                $http.post(serviceBD.comprobarTipo(e.target.value),
+                 * Cuanto es string va a item, cuando es numérico a itemNum, si es
+                 * cadena vacía, debe ir a item.
+                 */
+                $http.post(servicio,
                         {
                             datoBuscador: datoBuscador
                         })
@@ -82,7 +90,7 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
                                 id.style.color = 'black';
                             }
                         });
-                       
+
             }, 750);
         };
     }]);

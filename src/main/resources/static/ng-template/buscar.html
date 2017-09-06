@@ -9,7 +9,7 @@
         <div  id="cuenta">
             Datos recibidos : {{busquedas}} <br>
             Contador de busquedas: {{contador}}
-            Tipo {{tipo}}
+<!--            Tipo {{tipo}}-->
         </div>
 
     </div>
@@ -38,8 +38,8 @@
             <th>Url</th>
         </tr>
         <tr ng-repeat="x in tabla">
-            <td>{{x.nombre}}</td>
-            <td>{{x.descripcion}}</td>
+            <td ng-bind-html="x.nombre"></td>
+            <td ng-bind-html="x.descripcion"></td>
             <td style="background-image: url('{{x.url}}')"></td>
         </tr>
     </table>

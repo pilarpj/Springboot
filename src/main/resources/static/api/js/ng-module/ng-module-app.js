@@ -1,6 +1,6 @@
 //Generamos un modulo, se le pasa el parametro ngRoute.
 //El nombre 'app' tiene que ser el mismo que en el index.html
-var app = angular.module('app', ['ngRoute']);
+var app = angular.module('app', ['ngRoute' , 'ngSanitize']);
 
 //Configuracion, este modulo es de redireccionamiento.
 //Cuando pinches en el enlace carga contenido html nombre (si coincide carga la vista y controlador) de una pagina.

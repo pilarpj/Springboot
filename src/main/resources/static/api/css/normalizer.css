@@ -665,3 +665,12 @@ CONTENEDOR ICONS
     height: 50px;   
 }
 
+
+/*
+TEXTO SUBRAYADO EN EL BUSCADOR, CLASE SUB
+*/
+
+.sub{
+    color: red;
+    font-size: 14px;
+}
