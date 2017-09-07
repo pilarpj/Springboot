@@ -9,7 +9,7 @@
         <div  id="cuenta">
             Datos recibidos : {{busquedas}} <br>
             Contador de busquedas: {{contador}}
-<!--            Tipo {{tipo}}-->
+Tipo {{tipo}}
         </div>
 
     </div>
@@ -26,25 +26,42 @@
 
 </fieldset>-->
 
-<div id="tablaBbdd">
+<!--<div id="tablaBbdd">
     <div id="tablaBbddCabecera" >
         <h1>Items</h1>
     </div>
 
     <table id="tablaBbddContenido">
-        <tr>
-            <th>Nombre</th>
-            <th>Descripcion</th>
-            <th>Url</th>
-        </tr>
-        <tr ng-repeat="x in tabla">
-            <td ng-bind-html="x.nombre"></td>
-            <td ng-bind-html="x.descripcion"></td>
-            <td style="background-image: url('{{x.url}}')"></td>
+     <tr>
+        <th>Nombre</th>
+           <th>Descripcion</th>
+              <th>Url</th>
+    </tr>
+  
+<tr ng-repeat="x in tabla">
+    <td ng-bind-html="x.nombre"></td>
+    <td ng-bind-html="x.descripcion"></td>
+    <td style="background-image: url('{{x.url}}')"></td>
         </tr>
     </table>
 
-</div>
+</div>-->
+
+
+<table>
+    
+     <tr>
+        <th ng-repeat="(key, val) in tabla[0]">{{key}}</th>
+    </tr>
+     
+   <tr ng-repeat="i in tabla">
+        <td ng-repeat="(key, val) in i">{{val}}</td>
+    </tr>
+    
+    
+    
+</table>
+
 
 
 

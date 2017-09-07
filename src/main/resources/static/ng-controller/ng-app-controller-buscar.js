@@ -6,20 +6,49 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
         var contador = 0;
 
 
+
+
+
+
         /**Function autoinvocada nada mas iniciar la página 
          * que devuelve el contenido de la tabla Items.
          * @returns {tabla con contenido}
          */
         (function () {
+
+//            var json = {
+//                nombre: 'pp',
+//                propiedades: 'ppp',
+//            };
+//
+//            for (var i in json) {
+//                console.log(i);
+//                // console.log(json[i]);
+//            }
+
+
             $http.post('/allItems',
                     {
 
                     })
                     .then(function (response) {
-
+                        var campos = [];
                         var datos = (response.data);
                         $scope.tabla = datos;
                         $scope.numero = datos.length;
+
+                        for (var i = 0, max = 1; i < max; i++) {
+                     console.log(datos[i])
+                       
+                            for (var item in datos[i]){
+                             
+                              campos = item;
+                               console.log(campos);
+                               $scope.campos = campos;
+                            }
+                        }
+
+
                     });
 
         })();
@@ -36,7 +65,7 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
             var datoBuscador = e.target.value;
             servicio = serviceBD.comprobarTipo(datoBuscador);
             console.log("Datobuscador dentro del controller: " + datoBuscador);
-            
+
             /**
              * Si es cadena vacía, muestra todos los items.
              */
@@ -54,7 +83,7 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
                  */
                 serviceBD.setAllItems(serviceBD.getAllItems() + 1);
 
-               // $scope.tipo = serviceBD.comprobarTipo(e.target.value);
+                // $scope.tipo = serviceBD.comprobarTipo(e.target.value);
 
 
                 /**
@@ -94,5 +123,8 @@ app.controller('ng-app-controller-buscar', ['$scope', '$http', '$timeout', 'serv
             }, 750);
         };
     }]);
+
+
+
 
 
